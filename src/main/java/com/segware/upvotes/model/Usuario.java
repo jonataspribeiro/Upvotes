@@ -15,6 +15,27 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@NotNull(message = "O Nome é Obrigatório!")
+	private String nome;
+
+	@NotNull(message = "O Usuário é Obrigatório!")
+	@Size(min = 4, max = 30, message = "O Usuário deve ter no mínimo 4 caracteres")
+	private String usuario;
+
+	@NotNull(message = "A Senha é Obrigatória!")
+	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
+	private String senha;
+	
+	private String tipo;
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public long getId() {
 		return id;
@@ -47,16 +68,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	@NotNull(message = "O Nome é Obrigatório!")
-	private String nome;
-
-	@NotNull(message = "O Usuário é Obrigatório!")
-	@Size(min = 4, max = 30, message = "O Usuário deve ter no mínimo 4 caracteres")
-	private String usuario;
-
-	@NotNull(message = "A Senha é Obrigatória!")
-	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
-	private String senha;
 
 }
