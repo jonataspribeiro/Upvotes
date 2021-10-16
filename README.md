@@ -20,5 +20,6 @@ Utilizei o MySQL para alimentar os dados da API.
 Foram criados alguns testes para validação com JUnit.
 
 # Consumo API
-Para consumir a API foi utilizado o Swagger 
+Para consumir a API foi utilizado o Swagger.
+
 Caminho: http://localhost:8080/swagger-ui/.
