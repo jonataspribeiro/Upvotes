@@ -3,7 +3,7 @@ Teste Upvotes Segware
 
 # Segurança
 Para acessar a aplicação é necessário criar um usuário.
-Já foi criado um usuário teste que poderá ser acessado da seguinte forma:
+Foi criado um usuário teste que poderá ser acessado da seguinte forma:
 usuário: segware
 senha: segware
 
