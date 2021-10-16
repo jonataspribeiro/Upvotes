@@ -10,8 +10,8 @@ usuário: segware
 
 senha: segware
 
-# Postagens
-Foram criados métodos para realizar postagens com temas e cada postagem tem a função de realizar "upvotes" e "downvotes".
+# Postagens e Upvotes
+Foram criados métodos para realizar postagens (Get, Post, Put e Delete) com temas e cada postagem tem a função de realizar "upvotes" e "downvotes".
 
 # Banco de Dados
 Utilizei o MySQL para alimentar os dados da API.
