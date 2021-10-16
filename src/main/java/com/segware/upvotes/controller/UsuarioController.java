@@ -39,12 +39,9 @@ public class UsuarioController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> getById(@PathVariable long id) {
-
-		Optional<Usuario> usuario = usuarioRepository.findById(id);
-		if (usuario.isPresent()) {
-			return ResponseEntity.ok(usuario.get());
-		}
-		return ResponseEntity.notFound().build();
+		return usuarioRepository.findById(id)
+			.map(resp -> ResponseEntity.ok(resp))
+			.orElse(ResponseEntity.notFound().build());
 	}
 
 	@PostMapping("/logar")
@@ -56,7 +53,7 @@ public class UsuarioController {
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
 
-		Optional<Usuario> usuarioResp = usuarioService.CadastrarUsuario(usuario);
+		Optional<Usuario> usuarioResp = usuarioService.cadastrarUsuario(usuario);
 		try {
 			return ResponseEntity.ok(usuarioResp.get());
 		} catch (Exception e) {

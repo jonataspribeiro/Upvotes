@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity // Está notação diz que está classe vai definir uma tabela do meu banco de dados(entidade).
-@Table(name = "postagem") // Definindo o nome da tabela (create table tb_postagens).
+@Table(name = "tb_postagem") // Definindo o nome da tabela (create table tb_postagens).
 public class Postagem {
 
 	@Id // Chave Primária
@@ -42,6 +42,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties ("postagem")
+	private Usuario usuario;
 
 	public long getId() {
 		return id;
@@ -89,6 +93,14 @@ public class Postagem {
 
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

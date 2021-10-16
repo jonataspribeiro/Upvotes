@@ -20,7 +20,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
+	public Optional <Usuario> cadastrarUsuario(Usuario usuario) {
 
 		/*
 		 * Apresenta uma Exception do tipo Response Status Bad Request se o usuário já
@@ -71,19 +71,6 @@ public class UsuarioService {
 
 	}
 
-	public boolean excluirUsuario(Long id) {
-
-		if (usuarioRepository.findById(id).isPresent()) {
-
-			usuarioRepository.deleteById(id);
-			return true;
-
-		} else {
-
-			return false;
-
-		}
-	}
 
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> usuarioLogin) {
 
@@ -112,6 +99,20 @@ public class UsuarioService {
 
 		throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos!", null);
 
+	}
+	
+	public boolean excluirUsuario(Long id) {
+
+		if (usuarioRepository.findById(id).isPresent()) {
+
+			usuarioRepository.deleteById(id);
+			return true;
+
+		} else {
+
+			return false;
+
+		}
 	}
 
 }

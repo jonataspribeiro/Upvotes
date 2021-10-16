@@ -26,7 +26,7 @@ public class Tema {
 
 	// Relancionamento entre Entidades
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({ "tema", "usuario"})
+	@JsonIgnoreProperties({ "tema" })
 	private List<Postagem> postagem;
 
 	public long getId() {
