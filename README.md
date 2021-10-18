@@ -23,3 +23,6 @@ Foram criados alguns testes para validação com JUnit.
 Para consumir a API foi utilizado o Swagger.
 
 Caminho: http://localhost:8080/swagger-ui/.
+
+# Front-end
+https://github.com/jonataspribeiro/Upvotes-Front-end
